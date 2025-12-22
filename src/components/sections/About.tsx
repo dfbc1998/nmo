@@ -61,7 +61,7 @@ export function About() {
                             viewport={{ once: true }}
                             className="relative"
                         >
-                            <div className="relative w-full max-w-md mx-auto ">
+                            <div className="relative w-full max-w-md mx-auto rounded-3xl">
                                 <Image
                                     src="/images/about/daniel2.png"
                                     alt="Daniel Deu - Fundador NMO"

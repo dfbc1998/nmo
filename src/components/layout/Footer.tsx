@@ -10,10 +10,12 @@ const footerLinks = {
         { name: "Inicio", href: "#hero" },
         { name: "Metodología", href: "#metodologia" },
         { name: "Programas", href: "#programas" },
+        { name: "Libros", href: "#libros" },
         { name: "Contacto", href: "#contacto" },
     ],
     recursos: [
-        { name: "Blog", href: EXTERNAL_LINKS.blog, external: true },
+        { name: "Lúdica y Cultura", href: EXTERNAL_LINKS.ludicaCultura, external: true },
+        { name: "Lúdica y Neurociencia", href: EXTERNAL_LINKS.ludicaNeurociencia, external: true },
         { name: "Tienda", href: EXTERNAL_LINKS.tienda, external: true },
         { name: "Talleres", href: EXTERNAL_LINKS.talleres, external: true },
     ],
