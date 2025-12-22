@@ -27,6 +27,6 @@ export const EXTERNAL_LINKS = {
 } as const;
 
 export const CONTACT_INFO = {
-    email: "info@nmolatam.com",
+    email: "contacto@nmolatam.com",
     whatsapp: "https://wa.me/549XXXXXXXXX", // Actualizar con número real
 } as const;
