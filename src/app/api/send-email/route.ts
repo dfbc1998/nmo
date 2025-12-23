@@ -2,9 +2,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Inicializar Resend con la API key de NMO
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Email template
 const EmailTemplate = ({ name, email, phone, message }: {
   name: string;
@@ -134,6 +131,24 @@ const EmailTemplate = ({ name, email, phone, message }: {
 
 export async function POST(request: NextRequest) {
   try {
+    // ✅ LAZY INITIALIZATION - Solo crear instancia cuando se necesite
+    const apiKey = process.env.RESEND_API_KEY;
+
+    // Verificar que la API key exista
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not defined in environment variables');
+      return NextResponse.json(
+        {
+          error: 'Configuración del servidor incompleta',
+          details: 'RESEND_API_KEY no configurada'
+        },
+        { status: 500 }
+      );
+    }
+
+    // Crear instancia de Resend solo cuando se hace la request
+    const resend = new Resend(apiKey);
+
     const body = await request.json();
     const { name, email, phone, message } = body;
 
@@ -196,4 +211,15 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+// ✅ Opcional: GET para healthcheck
+export async function GET() {
+  const apiKey = process.env.RESEND_API_KEY;
+
+  return NextResponse.json({
+    status: 'ok',
+    resendConfigured: !!apiKey,
+    timestamp: new Date().toISOString(),
+  });
 }
