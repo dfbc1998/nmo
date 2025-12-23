@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { EXTERNAL_LINKS } from "@/config/links";
 import { Container } from "./Container";
@@ -41,25 +41,23 @@ export function Navbar() {
     }, []);
 
     return (
-        <motion.nav
+        <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
                 ? "bg-white/95 backdrop-blur-md shadow-md"
                 : "bg-white/80 backdrop-blur-sm"
                 }`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.3 }}
+            style={{ willChange: 'auto' }}
         >
             <Container>
-                <div className="flex items-center justify-between h-16">
+                <div className="flex items-center justify-between h-20">
                     {/* LOGO */}
                     <Link href="/" className="flex-shrink-0">
                         <Image
                             src="/images/logo/nmo.png"
                             alt="NMO Capacitación Neurolúdica"
-                            width={120}
-                            height={40}
-                            className="h-10 w-auto"
+                            width={180}
+                            height={60}
+                            className="h-14 w-auto"
                             priority
                         />
                     </Link>
@@ -84,32 +82,27 @@ export function Navbar() {
                                             <ChevronDownIcon className="w-4 h-4" />
                                         </button>
 
-                                        <AnimatePresence>
-                                            {openDropdown === link.name && (
-                                                <motion.div
-                                                    initial={{ opacity: 0, y: -10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    exit={{ opacity: 0, y: -10 }}
-                                                    className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg overflow-hidden shadow-lg"
-                                                    style={{ border: '1px solid rgba(138, 211, 242, 0.3)' }}
-                                                >
-                                                    {link.dropdown.map((item) => (
-                                                        <Link
-                                                            key={item.name}
-                                                            href={item.href}
-                                                            target={item.external ? "_blank" : undefined}
-                                                            rel={item.external ? "noopener noreferrer" : undefined}
-                                                            className="block px-4 py-3 transition-colors duration-200 hover:bg-gray-50"
-                                                            style={{ color: '#00577d' }}
-                                                            onMouseEnter={(e) => e.currentTarget.style.color = '#8ad3f2'}
-                                                            onMouseLeave={(e) => e.currentTarget.style.color = '#00577d'}
-                                                        >
-                                                            {item.name}
-                                                        </Link>
-                                                    ))}
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
+                                        {openDropdown === link.name && (
+                                            <div
+                                                className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg overflow-hidden shadow-lg"
+                                                style={{ border: '1px solid rgba(138, 211, 242, 0.3)' }}
+                                            >
+                                                {link.dropdown.map((item) => (
+                                                    <Link
+                                                        key={item.name}
+                                                        href={item.href}
+                                                        target={item.external ? "_blank" : undefined}
+                                                        rel={item.external ? "noopener noreferrer" : undefined}
+                                                        className="block px-4 py-3 transition-colors duration-200 hover:bg-gray-50"
+                                                        style={{ color: '#00577d' }}
+                                                        onMouseEnter={(e) => e.currentTarget.style.color = '#8ad3f2'}
+                                                        onMouseLeave={(e) => e.currentTarget.style.color = '#00577d'}
+                                                    >
+                                                        {item.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 ) : (
                                     <Link
@@ -154,10 +147,7 @@ export function Navbar() {
             {/* MOBILE MENU */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
+                    <div
                         className="md:hidden bg-white"
                         style={{ borderTop: '1px solid rgba(138, 211, 242, 0.3)' }}
                     >
@@ -213,9 +203,9 @@ export function Navbar() {
                                 </Button>
                             </div>
                         </Container>
-                    </motion.div>
+                    </div>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </nav>
     );
 }

@@ -25,7 +25,7 @@ const timeline = [
 
 export function About() {
     return (
-        <Section id="sobre-nosotros" className="bg-gray-50">
+        <Section id="sobre-nosotros" className="bg-gray-50 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -45,26 +45,26 @@ export function About() {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
-                    {/* FOTO DE DANIEL - INTEGRADA */}
+                    {/* FOTO DE DANIEL - SIN OVERFLOW */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="relative">
-                            {/* Círculos decorativos de fondo */}
+                        <div className="relative w-full max-w-md mx-auto overflow-hidden">
+                            {/* Círculos decorativos CONTENIDOS */}
                             <div
-                                className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl opacity-20"
+                                className="absolute top-4 left-4 w-48 h-48 rounded-full blur-3xl opacity-20 -z-10"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute -bottom-8 -right-8 w-64 h-64 rounded-full blur-3xl opacity-20"
+                                className="absolute bottom-4 right-4 w-48 h-48 rounded-full blur-3xl opacity-20 -z-10"
                                 style={{ backgroundColor: '#00577d' }}
                             />
 
                             {/* Contenedor de la imagen */}
-                            <div className="relative z-10 max-w-md mx-auto">
+                            <div className="relative z-10">
                                 <Image
                                     src="/images/about/daniel2.png"
                                     alt="Daniel Deu - Fundador NMO"
@@ -80,11 +80,11 @@ export function About() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.3 }}
-                                    className="absolute -bottom-4 -right-4 bg-white rounded-2xl p-4 shadow-xl"
+                                    className="absolute bottom-0 right-0 bg-white rounded-2xl p-4 shadow-xl max-w-xs"
                                 >
                                     <div className="flex items-center gap-3">
                                         <div
-                                            className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
+                                            className="w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
                                             style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
                                         >
                                             📚

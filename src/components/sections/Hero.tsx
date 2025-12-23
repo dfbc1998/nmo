@@ -23,12 +23,12 @@ export function Hero() {
     return (
         <Section
             id="hero"
-            className="pt-20 pb-12 relative"
+            className="pt-8 pb-12 relative overflow-hidden"
             containerClassName="max-w-7xl"
         >
-            {/* Gradient Background */}
+            {/* Gradient Background - CONTENIDO */}
             <div
-                className="absolute inset-0 -z-10"
+                className="absolute inset-0 -z-10 overflow-hidden"
                 style={{
                     background: 'linear-gradient(to bottom, #ffffff 0%, rgba(138, 211, 242, 0.1) 100%)'
                 }}
@@ -64,7 +64,7 @@ export function Hero() {
                             style={{ color: '#00577d' }}
                         >
                             Transforma tu Potencial{" "}
-                            <span style={{ color: '#8ad3f2' }}>Cognitivo</span>
+                            <span style={{ color: '#8ad3f2' }}>Neurocognitivo</span>
                         </motion.h1>
 
                         <motion.p
@@ -152,60 +152,64 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="relative"
                 >
-                    <div
-                        className="relative aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl"
-                        style={{
-                            background: 'linear-gradient(135deg, rgba(138, 211, 242, 0.2) 0%, rgba(0, 87, 125, 0.2) 100%)'
-                        }}
-                    >
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="text-center p-8">
-                                <div className="text-6xl mb-4">🧠</div>
-                                <p
-                                    className="font-semibold text-xl"
-                                    style={{ color: '#00577d' }}
-                                >
-                                    Capacitación Neurolúdica NMO
-                                </p>
-                            </div>
-                        </div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1 }}
-                            className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                    {/* CONTENEDOR SIN OVERFLOW */}
+                    <div className="relative w-full max-w-lg mx-auto">
+                        <div
+                            className="relative aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl"
+                            style={{
+                                background: 'linear-gradient(135deg, rgba(138, 211, 242, 0.2) 0%, rgba(0, 87, 125, 0.2) 100%)'
+                            }}
                         >
-                            <div className="flex items-center gap-3">
-                                <div
-                                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                                    style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
-                                >
-                                    <span className="text-2xl">🎯</span>
-                                </div>
-                                <div>
-                                    <div
-                                        className="font-semibold text-sm"
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="text-center p-8">
+                                    <div className="text-6xl mb-4">🧠</div>
+                                    <p
+                                        className="font-semibold text-xl"
                                         style={{ color: '#00577d' }}
                                     >
-                                        Capacitación Neurolúdica
-                                    </div>
-                                    <div className="text-xs text-gray-600">
-                                        Desde 1995 transformando profesionales
-                                    </div>
+                                        Capacitación Neurolúdica NMO
+                                    </p>
                                 </div>
                             </div>
-                        </motion.div>
-                    </div>
 
-                    <div
-                        className="absolute -top-6 -right-6 w-32 h-32 rounded-full blur-3xl -z-10"
-                        style={{ backgroundColor: 'rgba(138, 211, 242, 0.4)' }}
-                    />
-                    <div
-                        className="absolute -bottom-6 -left-6 w-40 h-40 rounded-full blur-3xl -z-10"
-                        style={{ backgroundColor: 'rgba(0, 87, 125, 0.3)' }}
-                    />
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 1 }}
+                                className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <div
+                                        className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                                        style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                    >
+                                        <span className="text-2xl">🎯</span>
+                                    </div>
+                                    <div>
+                                        <div
+                                            className="font-semibold text-sm"
+                                            style={{ color: '#00577d' }}
+                                        >
+                                            Capacitación Neurolúdica
+                                        </div>
+                                        <div className="text-xs text-gray-600">
+                                            Desde 1995 transformando profesionales
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* Círculos decorativos CONTENIDOS */}
+                        <div
+                            className="absolute top-0 left-0 w-32 h-32 rounded-full blur-3xl -z-10 opacity-30"
+                            style={{ backgroundColor: '#8ad3f2' }}
+                        />
+                        <div
+                            className="absolute bottom-0 right-0 w-40 h-40 rounded-full blur-3xl -z-10 opacity-20"
+                            style={{ backgroundColor: '#00577d' }}
+                        />
+                    </div>
                 </motion.div>
             </div>
 

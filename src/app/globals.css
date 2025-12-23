@@ -2,12 +2,23 @@
 @import "tailwindcss";
 
 @layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body {
     font-family: 'Poppins', system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
   h1,
@@ -18,5 +29,18 @@
   h6 {
     font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
+  }
+
+  /* Prevenir overflow horizontal */
+  #__next,
+  main {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Asegurar que ningún elemento se salga */
+  section {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
