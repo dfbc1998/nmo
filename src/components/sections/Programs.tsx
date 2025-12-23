@@ -3,108 +3,146 @@
 
 import { motion } from "framer-motion";
 import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/Button";
 import { EXTERNAL_LINKS } from "@/config/links";
 
-const featuredPrograms = [
+const programs = [
     {
-        id: "1",
-        title: "Autoliderazgo",
-        description: "Desarrolla tu capacidad de liderazgo personal y profesional mediante herramientas neurolúdicas.",
-        price: "USD $100",
-        icon: "🎯",
-        url: EXTERNAL_LINKS.autoliderazgo,
+        title: "Área Educativa",
+        description: "Especialización en Capacitación Neurolúdica para docentes y estudiantes de Ciencias de la Educación. Desarrollo de competencias pedagógicas innovadoras.",
+        icon: "🎓",
+        duration: "8 meses",
+        features: [
+            "Metodología N.M.O aplicada a la educación",
+            "Herramientas neurolúdicas para el aula",
+            "Certificación oficial",
+        ],
     },
     {
-        id: "2",
-        title: "Resolución Creativa de Conflictos",
-        description: "Aprende a gestionar conflictos de manera innovadora utilizando el pensamiento lateral.",
-        price: "USD $100",
-        icon: "🤝",
-        url: EXTERNAL_LINKS.conflictos,
+        title: "Área Empresarial",
+        description: "Programa de desarrollo ejecutivo que integra neurociencias y gestión del talento humano para líderes y equipos de alto rendimiento.",
+        icon: "💼",
+        duration: "6 meses",
+        features: [
+            "Liderazgo neurocognitivo",
+            "Toma de decisiones estratégicas",
+            "Gestión de equipos de alto rendimiento",
+        ],
     },
     {
-        id: "3",
-        title: "Activador de Inteligencias",
-        description: "Potencia tus inteligencias múltiples de forma práctica y vivencial.",
-        price: "USD $30",
-        icon: "🧠",
-        url: EXTERNAL_LINKS.inteligencias,
+        title: "Área Pública",
+        description: "Formación especializada para funcionarios públicos en gestión, liderazgo y transformación organizacional basada en neurociencias.",
+        icon: "🏛️",
+        duration: "6 meses",
+        features: [
+            "Gestión pública efectiva",
+            "Innovación en servicios públicos",
+            "Liderazgo transformacional",
+        ],
+    },
+    {
+        title: "Público en General",
+        description: "Talleres y seminarios abiertos de desarrollo personal y profesional utilizando la metodología N.M.O para potenciar capacidades.",
+        icon: "🌟",
+        duration: "Flexible",
+        features: [
+            "Autogestión y desarrollo personal",
+            "Creatividad e innovación",
+            "Modalidad presencial y virtual",
+        ],
     },
 ];
 
 export function Programs() {
     return (
-        <>
-            <style jsx global>{`
-        #programas {
-          background-color: rgba(138, 211, 242, 0.05);
-        }
-        .text-celeste-dark {
-          color: #00577d;
-        }
-        .border-celeste {
-          border-color: rgba(138, 211, 242, 0.3);
-        }
-        .program-card {
-          transition: all 0.3s ease;
-        }
-        .program-card:hover {
-          border-color: #8ad3f2;
-        }
-      `}</style>
-
-            <Section id="programas">
+        <Section id="programas" className="bg-gray-50">
+            <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-celeste-dark">
-                        Programas Destacados
+                    <h2
+                        className="text-4xl font-bold mb-4"
+                        style={{ color: '#00577d' }}
+                    >
+                        Nuestros Programas
                     </h2>
-                    <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                        Talleres diseñados para tu crecimiento profesional y personal
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Formación especializada en Capacitación Neurolúdica para diferentes ámbitos
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto">
-                    {featuredPrograms.map((program, index) => (
+                <div className="grid md:grid-cols-2 gap-8">
+                    {programs.map((program, index) => (
                         <motion.div
-                            key={program.id}
+                            key={program.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white border-2 border-celeste rounded-xl p-6 hover:shadow-xl program-card flex flex-col"
+                            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border-2"
+                            style={{ borderColor: 'rgba(138, 211, 242, 0.2)' }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.borderColor = '#8ad3f2';
+                                e.currentTarget.style.transform = 'translateY(-4px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.borderColor = 'rgba(138, 211, 242, 0.2)';
+                                e.currentTarget.style.transform = 'translateY(0)';
+                            }}
                         >
-                            <div className="text-4xl mb-4">{program.icon}</div>
-                            <h3 className="text-xl font-semibold text-celeste-dark mb-3">
+                            <div className="text-5xl mb-4">{program.icon}</div>
+                            <h3
+                                className="text-2xl font-bold mb-3"
+                                style={{ color: '#00577d' }}
+                            >
                                 {program.title}
                             </h3>
-                            <p className="text-gray-700 text-sm mb-4 flex-grow">{program.description}</p>
-                            <div className="text-2xl font-bold text-celeste-dark mb-4">
-                                {program.price}
+                            <p className="text-gray-600 mb-4 leading-relaxed">
+                                {program.description}
+                            </p>
+                            <div
+                                className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
+                                style={{
+                                    backgroundColor: 'rgba(138, 211, 242, 0.2)',
+                                    color: '#00577d'
+                                }}
+                            >
+                                Duración: {program.duration}
                             </div>
-                            <Button href={program.url} external className="w-full" size="sm">
-                                Ver Más Información
-                            </Button>
+                            <ul className="space-y-3 mb-6">
+                                {program.features.map((feature, idx) => (
+                                    <li key={idx} className="flex items-start gap-2">
+                                        <span
+                                            className="mt-1 flex-shrink-0"
+                                            style={{ color: '#00577d' }}
+                                        >
+                                            ✓
+                                        </span>
+                                        <span className="text-gray-700">{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <a
+                                href={EXTERNAL_LINKS.talleres}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block w-full text-center px-6 py-3 rounded-lg font-semibold text-white transition-all"
+                                style={{ backgroundColor: '#00577d' }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#8ad3f2';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#00577d';
+                                }}
+                            >
+                                Más Información
+                            </a>
                         </motion.div>
                     ))}
                 </div>
-
-                <div className="text-center space-y-4">
-                    <Button href={EXTERNAL_LINKS.talleres} external variant="outline" size="lg">
-                        Ver Todos los Talleres
-                    </Button>
-                    <div>
-                        <Button href="#contacto" variant="secondary" size="lg">
-                            Solicitar Información
-                        </Button>
-                    </div>
-                </div>
-            </Section>
-        </>
+            </div>
+        </Section>
     );
 }

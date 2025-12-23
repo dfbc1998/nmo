@@ -7,12 +7,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Email template
 const EmailTemplate = ({ name, email, phone, message }: {
-    name: string;
-    email: string;
-    phone?: string;
-    message: string;
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
 }) => {
-    return `
+  return `
     <!DOCTYPE html>
     <html>
       <head>
@@ -133,67 +133,67 @@ const EmailTemplate = ({ name, email, phone, message }: {
 };
 
 export async function POST(request: NextRequest) {
-    try {
-        const body = await request.json();
-        const { name, email, phone, message } = body;
+  try {
+    const body = await request.json();
+    const { name, email, phone, message } = body;
 
-        // Validación de campos requeridos
-        if (!name || !email || !message) {
-            return NextResponse.json(
-                { error: 'Faltan campos requeridos' },
-                { status: 400 }
-            );
-        }
-
-        // Validación de email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return NextResponse.json(
-                { error: 'Email inválido' },
-                { status: 400 }
-            );
-        }
-
-        // Enviar email con Resend
-        const { data, error } = await resend.emails.send({
-            from: 'NMO Contacto <contacto@nmolatam.com>',
-            to: ['contacto@nmolatam.com'],
-            replyTo: email,
-            subject: `Nuevo contacto de ${name} - nmolatam.com`,
-            html: EmailTemplate({ name, email, phone, message }),
-        });
-
-        // Manejar error de Resend
-        if (error) {
-            console.error('Resend error:', error);
-            return NextResponse.json(
-                {
-                    error: 'Error al enviar el email',
-                    details: error.message
-                },
-                { status: 500 }
-            );
-        }
-
-        // Respuesta exitosa
-        return NextResponse.json(
-            {
-                success: true,
-                message: 'Email enviado correctamente',
-                emailId: data?.id
-            },
-            { status: 200 }
-        );
-
-    } catch (error: any) {
-        console.error('Error sending email:', error);
-
-        return NextResponse.json(
-            {
-                error: 'Error al enviar el email',
-                details: error.message
-            },
-            { status: 500 }
-        );
+    // Validación de campos requeridos
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: 'Faltan campos requeridos' },
+        { status: 400 }
+      );
     }
+
+    // Validación de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Email inválido' },
+        { status: 400 }
+      );
+    }
+
+    // Enviar email con Resend
+    const { data, error } = await resend.emails.send({
+      from: 'NMO Contacto <contacto@nmolatam.com>',
+      to: ['contacto@nmolatam.com'],
+      replyTo: email,
+      subject: `Nuevo contacto de ${name} - nmolatam.com`,
+      html: EmailTemplate({ name, email, phone, message }),
+    });
+
+    // Manejar error de Resend
+    if (error) {
+      console.error('Resend error:', error);
+      return NextResponse.json(
+        {
+          error: 'Error al enviar el email',
+          details: error.message
+        },
+        { status: 500 }
+      );
+    }
+
+    // Respuesta exitosa
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Email enviado correctamente',
+        emailId: data?.id
+      },
+      { status: 200 }
+    );
+
+  } catch (error: any) {
+    console.error('Error sending email:', error);
+
+    return NextResponse.json(
+      {
+        error: 'Error al enviar el email',
+        details: error.message
+      },
+      { status: 500 }
+    );
+  }
 }
