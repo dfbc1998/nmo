@@ -14,18 +14,45 @@ export function Contact() {
         message: "",
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("loading");
+        setErrorMessage("");
 
-        // Aquí integrarás con tu backend o servicio de email
-        // Por ahora simulamos el envío
-        setTimeout(() => {
+        try {
+            const response = await fetch("/api/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Error al enviar el mensaje");
+            }
+
             setStatus("success");
             setFormData({ name: "", email: "", phone: "", message: "" });
-            setTimeout(() => setStatus("idle"), 3000);
-        }, 1000);
+
+            // Reset success message after 5 seconds
+            setTimeout(() => setStatus("idle"), 5000);
+
+        } catch (error: any) {
+            console.error("Error:", error);
+            setStatus("error");
+            setErrorMessage(error.message || "Error al enviar el mensaje. Inténtalo de nuevo.");
+
+            // Reset error message after 5 seconds
+            setTimeout(() => {
+                setStatus("idle");
+                setErrorMessage("");
+            }, 5000);
+        }
     };
 
     return (
@@ -59,7 +86,7 @@ export function Contact() {
                                     className="block text-sm font-medium mb-2"
                                     style={{ color: '#00577d' }}
                                 >
-                                    Nombre completo
+                                    Nombre completo *
                                 </label>
                                 <input
                                     type="text"
@@ -67,7 +94,8 @@ export function Contact() {
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition"
+                                    disabled={status === "loading"}
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                                     style={{
                                         borderColor: 'rgba(138, 211, 242, 0.3)',
                                     }}
@@ -82,7 +110,7 @@ export function Contact() {
                                     className="block text-sm font-medium mb-2"
                                     style={{ color: '#00577d' }}
                                 >
-                                    Email
+                                    Email *
                                 </label>
                                 <input
                                     type="email"
@@ -90,7 +118,8 @@ export function Contact() {
                                     required
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition"
+                                    disabled={status === "loading"}
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                                     style={{
                                         borderColor: 'rgba(138, 211, 242, 0.3)',
                                     }}
@@ -112,7 +141,8 @@ export function Contact() {
                                     id="phone"
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition"
+                                    disabled={status === "loading"}
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed"
                                     style={{
                                         borderColor: 'rgba(138, 211, 242, 0.3)',
                                     }}
@@ -127,7 +157,7 @@ export function Contact() {
                                     className="block text-sm font-medium mb-2"
                                     style={{ color: '#00577d' }}
                                 >
-                                    Mensaje
+                                    Mensaje *
                                 </label>
                                 <textarea
                                     id="message"
@@ -135,7 +165,8 @@ export function Contact() {
                                     rows={4}
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition resize-none"
+                                    disabled={status === "loading"}
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                                     style={{
                                         borderColor: 'rgba(138, 211, 242, 0.3)',
                                     }}
@@ -154,12 +185,44 @@ export function Contact() {
                             </Button>
 
                             {status === "success" && (
-                                <p
-                                    className="text-center font-medium"
-                                    style={{ color: '#00577d' }}
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-center p-4 rounded-lg"
+                                    style={{
+                                        backgroundColor: 'rgba(138, 211, 242, 0.1)',
+                                        borderLeft: '4px solid #8ad3f2'
+                                    }}
                                 >
-                                    ✓ ¡Mensaje enviado! Te contactaremos pronto.
-                                </p>
+                                    <p
+                                        className="font-medium"
+                                        style={{ color: '#00577d' }}
+                                    >
+                                        ✓ ¡Mensaje enviado exitosamente!
+                                    </p>
+                                    <p className="text-sm text-gray-600 mt-1">
+                                        Te contactaremos pronto.
+                                    </p>
+                                </motion.div>
+                            )}
+
+                            {status === "error" && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-center p-4 rounded-lg"
+                                    style={{
+                                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                                        borderLeft: '4px solid #ef4444'
+                                    }}
+                                >
+                                    <p className="font-medium text-red-600">
+                                        ✕ Error al enviar el mensaje
+                                    </p>
+                                    <p className="text-sm text-gray-600 mt-1">
+                                        {errorMessage || "Por favor, inténtalo de nuevo."}
+                                    </p>
+                                </motion.div>
                             )}
                         </form>
                     </motion.div>
@@ -195,13 +258,13 @@ export function Contact() {
                                             Email
                                         </div>
                                         <a
-                                            href="mailto:info@nmolatam.com"
+                                            href="mailto:contacto@nmolatam.com"
                                             className="transition-colors"
                                             style={{ color: '#8ad3f2' }}
                                             onMouseEnter={(e) => e.currentTarget.style.color = '#00577d'}
                                             onMouseLeave={(e) => e.currentTarget.style.color = '#8ad3f2'}
                                         >
-                                            info@nmolatam.com
+                                            contacto@nmolatam.com
                                         </a>
                                     </div>
                                 </div>
@@ -256,15 +319,16 @@ export function Contact() {
                                 className="font-bold mb-4"
                                 style={{ color: '#00577d' }}
                             >
-                                ¿Necesitas un diagnóstico gratuito?
+                                ¿Necesitas más información?
                             </h4>
                             <p className="text-gray-600 mb-6">
-                                Solicita una evaluación sin costo para determinar las necesidades
-                                de capacitación de tu equipo u organización.
+                                Completa el formulario y nos pondremos en contacto contigo a la brevedad
+                                para brindarte toda la información que necesites sobre nuestros programas.
                             </p>
-                            <Button variant="secondary" className="w-full">
-                                Solicitar Diagnóstico
-                            </Button>
+                            <div className="flex items-center gap-2 text-sm text-gray-500">
+                                <span>⏱️</span>
+                                <span>Respondemos en menos de 24 horas</span>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
