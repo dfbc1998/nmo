@@ -164,7 +164,7 @@ export function Hero() {
                                     playsInline
                                     className="w-full h-full object-cover"
                                 >
-                                    <source src="/videos/capacitacion.mp4" type="video/mp4" />
+                                    <source src="https://res.cloudinary.com/devx83poh/video/upload/v1766512864/capacitacion_fl4kjs.mp4" type="video/mp4" />
                                 </video>
 
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

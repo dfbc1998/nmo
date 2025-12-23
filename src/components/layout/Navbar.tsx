@@ -53,7 +53,7 @@ export function Navbar() {
                     {/* LOGO */}
                     <Link href="/" className="flex-shrink-0">
                         <Image
-                            src="/images/logo/nmo.png"
+                            src="https://res.cloudinary.com/devx83poh/image/upload/v1766524617/nmo_z7d77b.png"
                             alt="NMO Capacitación Neurolúdica"
                             width={180}
                             height={60}

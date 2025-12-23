@@ -15,7 +15,7 @@ const featuredBooks = [
         subtitle: "El saber de saberse Parte I",
         author: "Daniel Deu",
         price: "USD $3.44",
-        cover: "/images/books/contabilidad1.jpg",
+        cover: "https://res.cloudinary.com/devx83poh/image/upload/v1766512861/contabilidad1_pj2oow.jpg",
         format: "Digital",
     },
     {
@@ -24,7 +24,7 @@ const featuredBooks = [
         subtitle: "Saber Hacer Parte II",
         author: "Daniel Deu",
         price: "USD $3.44",
-        cover: "/images/books/contabilidad2.jpg",
+        cover: "https://res.cloudinary.com/devx83poh/image/upload/v1766512861/contabilidad2_i7rlq0.jpg",
         format: "Digital",
     },
     {
@@ -33,7 +33,7 @@ const featuredBooks = [
         subtitle: "Saber Ser Parte III",
         author: "Daniel Deu",
         price: "USD $3.44",
-        cover: "/images/books/contabilidad3.jpg",
+        cover: "https://res.cloudinary.com/devx83poh/image/upload/v1766512861/contabilidad3_jnkofs.jpg",
         format: "Digital",
     },
     {
@@ -42,7 +42,7 @@ const featuredBooks = [
         subtitle: "Articulos de Colección",
         author: "Daniel Deu",
         price: "USD $1.00",
-        cover: "/images/books/hooponopono.jpg",
+        cover: "https://res.cloudinary.com/devx83poh/image/upload/v1766512862/hooponopono_ob2qq9.jpg",
         format: "Digital",
     },
 ];

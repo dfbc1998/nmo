@@ -30,7 +30,7 @@ export function Footer() {
                     <div className="md:col-span-2">
                         {/* LOGO NMO MÁS GRANDE */}
                         <Image
-                            src="/images/logo/nmo.png"
+                            src="https://res.cloudinary.com/devx83poh/image/upload/v1766524617/nmo_z7d77b.png"
                             alt="NMO Capacitación Neurolúdica"
                             width={220}
                             height={73}

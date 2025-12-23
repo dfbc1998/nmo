@@ -76,7 +76,7 @@ export function About() {
 
                                 {/* IMAGEN DE DANIEL - TAMAÑO AUMENTADO */}
                                 <Image
-                                    src="/images/about/daniel2.png"
+                                    src="https://res.cloudinary.com/devx83poh/image/upload/v1766512862/daniel2_mzgw3y.png"
                                     alt="Daniel Deu - Fundador NMO"
                                     width={700}
                                     height={840}

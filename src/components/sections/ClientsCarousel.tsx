@@ -6,14 +6,18 @@ import { Section } from "@/components/layout/Section";
 import Image from "next/image";
 
 const clients = [
-    { name: "ANSES", logo: "/images/clients/anses.png" },
-    { name: "Senado de la Nación", logo: "/images/clients/senado.png" },
-    { name: "Universidad de Buenos Aires", logo: "/images/clients/uba.png" },
-    { name: "Universidad Nacional de Luján", logo: "/images/clients/unlu.png" },
-    { name: "CPCE Catamarca", logo: "/images/clients/cpce-catamarca.png" },
-    { name: "CPCE Salta", logo: "/images/clients/cpce-salta.png" },
-    { name: "Universidad de Morón", logo: "/images/clients/umoron.png" },
-    { name: "South Consulting", logo: "/images/clients/south.png" },
+    { name: "Municipio Carmen de Areco", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766527134/download_fgsouc.png" },
+    { name: "Universidad Nacional de La Matanza", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766527250/download_ty0df2.png" },
+    { name: "C.P.C.E.S.E.", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766527376/cpcese_qodw76.png" },
+    { name: "COFyBCF", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766527670/images_zukujy.png" },
+    { name: "Escuela de Emprendedor@s", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766527897/images-Photoroom_h8savb.png" },
+    { name: "Educación Ciencia y Tecnología Catamarca", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766528597/Logo_Aprender-Photoroom-Photoroom-Photoroom_yvpyew.png" },
+    { name: "Universidad de Buenos Aires", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766528098/UBA_b59uqv.png" },
+    { name: "Universidad Nacional de Luján", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766528027/National_University_of_Luj%C3%A1n_Logo_wkdamp.png" },
+    { name: "CPCE Catamarca", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766529187/Logo-cpcec-azul-bajada-vertical-25-h486_d8rfqq.webp" },
+    { name: "CPCE Salta", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766529081/cepce-salta-Photoroom_jyxifo.png" },
+    { name: "Facultad de Derecho UBA", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766529824/images-Photoroom_2_ju8gsq.png" },
+    { name: "Ushuaia", logo: "https://res.cloudinary.com/devx83poh/image/upload/v1766529742/images-Photoroom_1_lkwyem.png" },
 ];
 
 export function ClientsCarousel() {
