@@ -24,6 +24,7 @@ export function Contact() {
         setTimeout(() => {
             setStatus("success");
             setFormData({ name: "", email: "", phone: "", message: "" });
+            setTimeout(() => setStatus("idle"), 3000);
         }, 1000);
     };
 
@@ -37,7 +38,7 @@ export function Contact() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl font-bold mb-4">
-                        ¿Listo para <span className="text-blue-600">Transformar</span>?
+                        ¿Listo para <span style={{ color: '#8ad3f2' }}>Transformar</span>?
                     </h2>
                     <p className="text-xl text-gray-600">
                         Contáctanos y comienza tu proceso de capacitación neurolúdica
@@ -53,7 +54,11 @@ export function Contact() {
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                                <label
+                                    htmlFor="name"
+                                    className="block text-sm font-medium mb-2"
+                                    style={{ color: '#00577d' }}
+                                >
                                     Nombre completo
                                 </label>
                                 <input
@@ -62,12 +67,21 @@ export function Contact() {
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition"
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition"
+                                    style={{
+                                        borderColor: 'rgba(138, 211, 242, 0.3)',
+                                    }}
+                                    onFocus={(e) => e.currentTarget.style.borderColor = '#8ad3f2'}
+                                    onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(138, 211, 242, 0.3)'}
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                <label
+                                    htmlFor="email"
+                                    className="block text-sm font-medium mb-2"
+                                    style={{ color: '#00577d' }}
+                                >
                                     Email
                                 </label>
                                 <input
@@ -76,12 +90,21 @@ export function Contact() {
                                     required
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition"
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition"
+                                    style={{
+                                        borderColor: 'rgba(138, 211, 242, 0.3)',
+                                    }}
+                                    onFocus={(e) => e.currentTarget.style.borderColor = '#8ad3f2'}
+                                    onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(138, 211, 242, 0.3)'}
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                                <label
+                                    htmlFor="phone"
+                                    className="block text-sm font-medium mb-2"
+                                    style={{ color: '#00577d' }}
+                                >
                                     Teléfono (opcional)
                                 </label>
                                 <input
@@ -89,12 +112,21 @@ export function Contact() {
                                     id="phone"
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition"
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition"
+                                    style={{
+                                        borderColor: 'rgba(138, 211, 242, 0.3)',
+                                    }}
+                                    onFocus={(e) => e.currentTarget.style.borderColor = '#8ad3f2'}
+                                    onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(138, 211, 242, 0.3)'}
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                                <label
+                                    htmlFor="message"
+                                    className="block text-sm font-medium mb-2"
+                                    style={{ color: '#00577d' }}
+                                >
                                     Mensaje
                                 </label>
                                 <textarea
@@ -103,7 +135,12 @@ export function Contact() {
                                     rows={4}
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition resize-none"
+                                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition resize-none"
+                                    style={{
+                                        borderColor: 'rgba(138, 211, 242, 0.3)',
+                                    }}
+                                    onFocus={(e) => e.currentTarget.style.borderColor = '#8ad3f2'}
+                                    onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(138, 211, 242, 0.3)'}
                                 />
                             </div>
 
@@ -117,8 +154,11 @@ export function Contact() {
                             </Button>
 
                             {status === "success" && (
-                                <p className="text-green-600 text-center">
-                                    ¡Mensaje enviado! Te contactaremos pronto.
+                                <p
+                                    className="text-center font-medium"
+                                    style={{ color: '#00577d' }}
+                                >
+                                    ✓ ¡Mensaje enviado! Te contactaremos pronto.
                                 </p>
                             )}
                         </form>
@@ -132,39 +172,72 @@ export function Contact() {
                         className="space-y-8"
                     >
                         <div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                            <h3
+                                className="text-2xl font-bold mb-6"
+                                style={{ color: '#00577d' }}
+                            >
                                 Información de Contacto
                             </h3>
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div
+                                        className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                                        style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                    >
                                         <span className="text-2xl">📧</span>
                                     </div>
                                     <div>
-                                        <div className="font-semibold text-gray-900">Email</div>
-                                        <a href="mailto:info@nmolatam.com" className="text-blue-600 hover:underline">
+                                        <div
+                                            className="font-semibold"
+                                            style={{ color: '#00577d' }}
+                                        >
+                                            Email
+                                        </div>
+                                        <a
+                                            href="mailto:info@nmolatam.com"
+                                            className="transition-colors"
+                                            style={{ color: '#8ad3f2' }}
+                                            onMouseEnter={(e) => e.currentTarget.style.color = '#00577d'}
+                                            onMouseLeave={(e) => e.currentTarget.style.color = '#8ad3f2'}
+                                        >
                                             info@nmolatam.com
                                         </a>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div
+                                        className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                                        style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                    >
                                         <span className="text-2xl">📍</span>
                                     </div>
                                     <div>
-                                        <div className="font-semibold text-gray-900">Ubicación</div>
+                                        <div
+                                            className="font-semibold"
+                                            style={{ color: '#00577d' }}
+                                        >
+                                            Ubicación
+                                        </div>
                                         <div className="text-gray-600">Buenos Aires, Argentina</div>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div
+                                        className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                                        style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                    >
                                         <span className="text-2xl">💼</span>
                                     </div>
                                     <div>
-                                        <div className="font-semibold text-gray-900">Áreas de Atención</div>
+                                        <div
+                                            className="font-semibold"
+                                            style={{ color: '#00577d' }}
+                                        >
+                                            Áreas de Atención
+                                        </div>
                                         <div className="text-gray-600">
                                             Educativa • Empresarial • Pública • Público en general
                                         </div>
@@ -173,8 +246,16 @@ export function Contact() {
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
-                            <h4 className="font-bold text-gray-900 mb-4">
+                        <div
+                            className="rounded-2xl p-8"
+                            style={{
+                                background: 'linear-gradient(135deg, rgba(138, 211, 242, 0.1) 0%, rgba(0, 87, 125, 0.05) 100%)'
+                            }}
+                        >
+                            <h4
+                                className="font-bold mb-4"
+                                style={{ color: '#00577d' }}
+                            >
                                 ¿Necesitas un diagnóstico gratuito?
                             </h4>
                             <p className="text-gray-600 mb-6">

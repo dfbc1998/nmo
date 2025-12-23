@@ -3,7 +3,6 @@
 
 import { motion } from "framer-motion";
 import { Section } from "@/components/layout/Section";
-import Image from "next/image";
 
 const pillars = [
     {
@@ -59,10 +58,13 @@ export function Methodology() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl font-bold mb-6">
-                        ¿Qué es <span className="text-blue-600">N.M.O</span>?
+                        ¿Qué es <span style={{ color: '#8ad3f2' }}>N.M.O</span>?
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
-                        <strong>Necesidad - Motivación - Oportunidad</strong>
+                    <p
+                        className="text-xl font-semibold max-w-4xl mx-auto mb-4"
+                        style={{ color: '#00577d' }}
+                    >
+                        Necesidad - Motivación - Oportunidad
                     </p>
                     <p className="text-lg text-gray-600 max-w-4xl mx-auto">
                         Un enfoque holístico que integra las neurociencias conductuales con la lúdica.
@@ -78,7 +80,10 @@ export function Methodology() {
                     viewport={{ once: true }}
                     className="mb-20"
                 >
-                    <h3 className="text-2xl font-bold text-center mb-12 text-gray-900">
+                    <h3
+                        className="text-2xl font-bold text-center mb-12"
+                        style={{ color: '#00577d' }}
+                    >
                         Objetivos del Programa
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -89,10 +94,16 @@ export function Methodology() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-gray-50 rounded-xl p-6 border-2 border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all"
+                                className="bg-gray-50 rounded-xl p-6 border-2 hover:shadow-lg transition-all"
+                                style={{ borderColor: 'rgba(138, 211, 242, 0.2)' }}
+                                onMouseEnter={(e) => e.currentTarget.style.borderColor = '#8ad3f2'}
+                                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(138, 211, 242, 0.2)'}
                             >
                                 <div className="text-4xl mb-4">{pillar.icon}</div>
-                                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                                <h4
+                                    className="text-lg font-semibold mb-2"
+                                    style={{ color: '#00577d' }}
+                                >
                                     {pillar.title}
                                 </h4>
                                 <p className="text-gray-600 text-sm">
@@ -108,9 +119,15 @@ export function Methodology() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-12"
+                    className="rounded-3xl p-12"
+                    style={{
+                        background: 'linear-gradient(135deg, rgba(138, 211, 242, 0.1) 0%, rgba(0, 87, 125, 0.05) 100%)'
+                    }}
                 >
-                    <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
+                    <h3
+                        className="text-3xl font-bold text-center mb-12"
+                        style={{ color: '#00577d' }}
+                    >
                         ¿Por qué el N.M.O?
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -123,7 +140,10 @@ export function Methodology() {
                                 transition={{ delay: index * 0.1 }}
                                 className="flex items-start gap-3"
                             >
-                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-0.5">
+                                <div
+                                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5"
+                                    style={{ backgroundColor: '#00577d' }}
+                                >
                                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
@@ -141,8 +161,14 @@ export function Methodology() {
                     viewport={{ once: true }}
                     className="mt-20 text-center"
                 >
-                    <div className="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-sm">
-                        <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                    <div
+                        className="bg-white rounded-2xl p-8 border-2 shadow-sm"
+                        style={{ borderColor: 'rgba(138, 211, 242, 0.2)' }}
+                    >
+                        <h3
+                            className="text-2xl font-bold mb-4"
+                            style={{ color: '#00577d' }}
+                        >
                             Funciones Ejecutivas e Inteligencia Ejecutiva
                         </h3>
                         <p className="text-gray-600 max-w-4xl mx-auto">

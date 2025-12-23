@@ -45,7 +45,7 @@ export function About() {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
-                    {/* FOTO DE DANIEL - INTEGRADA CON EFECTOS */}
+                    {/* FOTO DE DANIEL - INTEGRADA SIN BORDES VISIBLES */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -53,32 +53,40 @@ export function About() {
                         className="relative"
                     >
                         <div className="relative max-w-md mx-auto">
-                            {/* CÍRCULOS DECORATIVOS DIFUMINADOS - DETRÁS */}
+                            {/* FONDO CON GRADIENTE RADIAL - MUY DIFUMINADO */}
                             <div
-                                className="absolute -top-12 -left-12 w-64 h-64 rounded-full blur-3xl opacity-30 -z-10"
+                                className="absolute inset-0 opacity-40"
+                                style={{
+                                    background: 'radial-gradient(circle at 30% 30%, rgba(138, 211, 242, 0.4) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(0, 87, 125, 0.3) 0%, transparent 50%)',
+                                }}
+                            />
+
+                            {/* CÍRCULOS DECORATIVOS MUY DIFUMINADOS - MÁS GRANDES Y LEJANOS */}
+                            <div
+                                className="absolute -top-24 -left-24 w-96 h-96 rounded-full blur-3xl opacity-20 -z-10"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute -bottom-12 -right-12 w-72 h-72 rounded-full blur-3xl opacity-25 -z-10"
+                                className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full blur-3xl opacity-15 -z-10"
                                 style={{ backgroundColor: '#00577d' }}
                             />
 
-                            {/* FORMAS GEOMÉTRICAS DECORATIVAS */}
-                            <div
-                                className="absolute top-20 -right-8 w-20 h-20 rounded-full opacity-10 -z-10"
-                                style={{ backgroundColor: '#8ad3f2' }}
-                            />
-                            <div
-                                className="absolute bottom-32 -left-6 w-16 h-16 rounded-lg rotate-45 opacity-10 -z-10"
-                                style={{ backgroundColor: '#00577d' }}
-                            />
-
-                            {/* IMAGEN DE DANIEL CON SOMBRA SUAVE */}
+                            {/* IMAGEN DE DANIEL CON DEGRADADO SUTIL EN LOS BORDES */}
                             <div className="relative z-10">
+                                {/* Overlay de gradiente para suavizar bordes */}
                                 <div
-                                    className="absolute inset-0 rounded-3xl opacity-20 blur-2xl -z-10"
+                                    className="absolute inset-0 pointer-events-none z-20"
+                                    style={{
+                                        background: 'linear-gradient(to bottom, rgba(249, 250, 251, 0) 10%, rgba(249, 250, 251, 0) 90%, rgba(249, 250, 251, 0.3) 100%), linear-gradient(to right, rgba(249, 250, 251, 0.2) 0%, rgba(249, 250, 251, 0) 10%, rgba(249, 250, 251, 0) 90%, rgba(249, 250, 251, 0.2) 100%)',
+                                    }}
+                                />
+
+                                {/* Sombra suave y difusa detrás */}
+                                <div
+                                    className="absolute inset-8 rounded-full opacity-10 blur-3xl -z-10"
                                     style={{ backgroundColor: '#00577d' }}
                                 />
+
                                 <Image
                                     src="/images/about/daniel2.png"
                                     alt="Daniel Deu - Fundador NMO"
@@ -86,19 +94,9 @@ export function About() {
                                     height={600}
                                     className="w-full h-auto relative z-10"
                                     style={{
-                                        filter: 'drop-shadow(0 25px 50px rgba(0, 87, 125, 0.15))'
+                                        filter: 'drop-shadow(0 20px 40px rgba(0, 87, 125, 0.1))',
                                     }}
                                     priority
-                                />
-
-                                {/* LÍNEAS DECORATIVAS */}
-                                <div
-                                    className="absolute top-0 left-0 w-24 h-1 -translate-x-8 -translate-y-4"
-                                    style={{ backgroundColor: '#8ad3f2' }}
-                                />
-                                <div
-                                    className="absolute bottom-0 right-0 w-32 h-1 translate-x-8 translate-y-4"
-                                    style={{ backgroundColor: '#00577d' }}
                                 />
                             </div>
 
@@ -108,7 +106,10 @@ export function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
-                                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl z-20 max-w-xs"
+                                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl z-20 max-w-xs"
+                                style={{
+                                    boxShadow: '0 20px 60px rgba(0, 87, 125, 0.15)'
+                                }}
                             >
                                 <div className="flex items-center gap-3">
                                     <div
@@ -131,17 +132,27 @@ export function About() {
                                 </div>
                             </motion.div>
 
-                            {/* PUNTOS DECORATIVOS */}
+                            {/* ELEMENTOS DECORATIVOS SUTILES */}
                             <div
-                                className="absolute top-12 left-8 w-2 h-2 rounded-full opacity-40"
+                                className="absolute top-20 -left-4 w-32 h-32 rounded-full opacity-5 -z-10"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute top-16 left-12 w-2 h-2 rounded-full opacity-40"
+                                className="absolute bottom-32 -right-8 w-40 h-40 rounded-full opacity-5 -z-10"
+                                style={{ backgroundColor: '#00577d' }}
+                            />
+
+                            {/* Puntos decorativos muy sutiles */}
+                            <div
+                                className="absolute top-16 left-12 w-2 h-2 rounded-full opacity-20"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute bottom-24 right-12 w-3 h-3 rounded-full opacity-30"
+                                className="absolute top-20 left-16 w-2 h-2 rounded-full opacity-20"
+                                style={{ backgroundColor: '#8ad3f2' }}
+                            />
+                            <div
+                                className="absolute bottom-28 right-16 w-3 h-3 rounded-full opacity-15"
                                 style={{ backgroundColor: '#00577d' }}
                             />
                         </div>
