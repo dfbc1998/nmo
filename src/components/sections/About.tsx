@@ -45,64 +45,105 @@ export function About() {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
-                    {/* FOTO DE DANIEL - SIN OVERFLOW */}
+                    {/* FOTO DE DANIEL - INTEGRADA CON EFECTOS */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="relative w-full max-w-md mx-auto overflow-hidden">
-                            {/* Círculos decorativos CONTENIDOS */}
+                        <div className="relative max-w-md mx-auto">
+                            {/* CÍRCULOS DECORATIVOS DIFUMINADOS - DETRÁS */}
                             <div
-                                className="absolute top-4 left-4 w-48 h-48 rounded-full blur-3xl opacity-20 -z-10"
+                                className="absolute -top-12 -left-12 w-64 h-64 rounded-full blur-3xl opacity-30 -z-10"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute bottom-4 right-4 w-48 h-48 rounded-full blur-3xl opacity-20 -z-10"
+                                className="absolute -bottom-12 -right-12 w-72 h-72 rounded-full blur-3xl opacity-25 -z-10"
                                 style={{ backgroundColor: '#00577d' }}
                             />
 
-                            {/* Contenedor de la imagen */}
+                            {/* FORMAS GEOMÉTRICAS DECORATIVAS */}
+                            <div
+                                className="absolute top-20 -right-8 w-20 h-20 rounded-full opacity-10 -z-10"
+                                style={{ backgroundColor: '#8ad3f2' }}
+                            />
+                            <div
+                                className="absolute bottom-32 -left-6 w-16 h-16 rounded-lg rotate-45 opacity-10 -z-10"
+                                style={{ backgroundColor: '#00577d' }}
+                            />
+
+                            {/* IMAGEN DE DANIEL CON SOMBRA SUAVE */}
                             <div className="relative z-10">
+                                <div
+                                    className="absolute inset-0 rounded-3xl opacity-20 blur-2xl -z-10"
+                                    style={{ backgroundColor: '#00577d' }}
+                                />
                                 <Image
                                     src="/images/about/daniel2.png"
                                     alt="Daniel Deu - Fundador NMO"
                                     width={500}
                                     height={600}
-                                    className="w-full h-auto drop-shadow-2xl"
+                                    className="w-full h-auto relative z-10"
+                                    style={{
+                                        filter: 'drop-shadow(0 25px 50px rgba(0, 87, 125, 0.15))'
+                                    }}
                                     priority
                                 />
 
-                                {/* Badge flotante */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.3 }}
-                                    className="absolute bottom-0 right-0 bg-white rounded-2xl p-4 shadow-xl max-w-xs"
-                                >
-                                    <div className="flex items-center gap-3">
+                                {/* LÍNEAS DECORATIVAS */}
+                                <div
+                                    className="absolute top-0 left-0 w-24 h-1 -translate-x-8 -translate-y-4"
+                                    style={{ backgroundColor: '#8ad3f2' }}
+                                />
+                                <div
+                                    className="absolute bottom-0 right-0 w-32 h-1 translate-x-8 translate-y-4"
+                                    style={{ backgroundColor: '#00577d' }}
+                                />
+                            </div>
+
+                            {/* BADGE FLOTANTE */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.3 }}
+                                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl z-20 max-w-xs"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <div
+                                        className="w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
+                                        style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                    >
+                                        📚
+                                    </div>
+                                    <div>
                                         <div
-                                            className="w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
-                                            style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                            className="font-semibold text-sm"
+                                            style={{ color: '#00577d' }}
                                         >
-                                            📚
+                                            Autor & Educador
                                         </div>
-                                        <div>
-                                            <div
-                                                className="font-semibold text-sm"
-                                                style={{ color: '#00577d' }}
-                                            >
-                                                Autor & Educador
-                                            </div>
-                                            <div className="text-xs text-gray-600">
-                                                30+ años de experiencia
-                                            </div>
+                                        <div className="text-xs text-gray-600">
+                                            30+ años de experiencia
                                         </div>
                                     </div>
-                                </motion.div>
-                            </div>
+                                </div>
+                            </motion.div>
+
+                            {/* PUNTOS DECORATIVOS */}
+                            <div
+                                className="absolute top-12 left-8 w-2 h-2 rounded-full opacity-40"
+                                style={{ backgroundColor: '#8ad3f2' }}
+                            />
+                            <div
+                                className="absolute top-16 left-12 w-2 h-2 rounded-full opacity-40"
+                                style={{ backgroundColor: '#8ad3f2' }}
+                            />
+                            <div
+                                className="absolute bottom-24 right-12 w-3 h-3 rounded-full opacity-30"
+                                style={{ backgroundColor: '#00577d' }}
+                            />
                         </div>
                     </motion.div>
 

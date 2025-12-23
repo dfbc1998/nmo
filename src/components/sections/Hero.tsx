@@ -4,7 +4,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/layout/Section";
-import { EXTERNAL_LINKS } from "@/config/links";
+import Image from "next/image";
 import { ArrowRightIcon, CheckCircledIcon } from "@radix-ui/react-icons";
 
 const stats = [
@@ -26,7 +26,7 @@ export function Hero() {
             className="pt-8 pb-12 relative overflow-hidden"
             containerClassName="max-w-7xl"
         >
-            {/* Gradient Background - CONTENIDO */}
+            {/* Gradient Background */}
             <div
                 className="absolute inset-0 -z-10 overflow-hidden"
                 style={{
@@ -35,6 +35,7 @@ export function Hero() {
             />
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* COLUMNA IZQUIERDA - TEXTO */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -146,61 +147,86 @@ export function Hero() {
                     </motion.div>
                 </motion.div>
 
+                {/* COLUMNA DERECHA - VIDEO/IMAGEN */}
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="relative"
                 >
-                    {/* CONTENEDOR SIN OVERFLOW */}
                     <div className="relative w-full max-w-lg mx-auto">
-                        <div
-                            className="relative aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl"
-                            style={{
-                                background: 'linear-gradient(135deg, rgba(138, 211, 242, 0.2) 0%, rgba(0, 87, 125, 0.2) 100%)'
-                            }}
+                        {
+                            <div className="relative aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                                <video
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-full object-cover"
+                                >
+                                    <source src="/videos/capacitacion.mp4" type="video/mp4" />
+                                </video>
+
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 1 }}
+                                    className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <div
+                                            className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                                            style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                        >
+                                            <span className="text-2xl">🎯</span>
+                                        </div>
+                                        <div>
+                                            <div
+                                                className="font-semibold text-sm"
+                                                style={{ color: '#00577d' }}
+                                            >
+                                                Capacitación Neurolúdica
+                                            </div>
+                                            <div className="text-xs text-gray-600">
+                                                Desde 1995 transformando profesionales
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        }
+
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 1 }}
+                            className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
                         >
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-center p-8">
-                                    <div className="text-6xl mb-4">🧠</div>
-                                    <p
-                                        className="font-semibold text-xl"
+                            <div className="flex items-center gap-3">
+                                <div
+                                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                                    style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
+                                >
+                                    <span className="text-2xl">🎯</span>
+                                </div>
+                                <div>
+                                    <div
+                                        className="font-semibold text-sm"
                                         style={{ color: '#00577d' }}
                                     >
-                                        Capacitación Neurolúdica NMO
-                                    </p>
+                                        Capacitación Neurolúdica
+                                    </div>
+                                    <div className="text-xs text-gray-600">
+                                        Desde 1995 transformando profesionales
+                                    </div>
                                 </div>
                             </div>
+                        </motion.div>
 
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 1 }}
-                                className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
-                            >
-                                <div className="flex items-center gap-3">
-                                    <div
-                                        className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                                        style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
-                                    >
-                                        <span className="text-2xl">🎯</span>
-                                    </div>
-                                    <div>
-                                        <div
-                                            className="font-semibold text-sm"
-                                            style={{ color: '#00577d' }}
-                                        >
-                                            Capacitación Neurolúdica
-                                        </div>
-                                        <div className="text-xs text-gray-600">
-                                            Desde 1995 transformando profesionales
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-
-                        {/* Círculos decorativos CONTENIDOS */}
+                        {/* Círculos decorativos */}
                         <div
                             className="absolute top-0 left-0 w-32 h-32 rounded-full blur-3xl -z-10 opacity-30"
                             style={{ backgroundColor: '#8ad3f2' }}
