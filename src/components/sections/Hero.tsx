@@ -64,7 +64,7 @@ export function Hero() {
                             style={{ color: '#00577d' }}
                         >
                             Transforma tu Potencial{" "}
-                            <span style={{ color: '#8ad3f2' }}>Neurocognitivo</span>
+                            <span style={{ color: '#8ad3f2' }}>Cognitivo</span>
                         </motion.h1>
 
                         <motion.p

@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./Container";
 import { EXTERNAL_LINKS } from "@/config/links";
 
@@ -24,24 +25,20 @@ const footerLinks = {
 export function Footer() {
     return (
         <footer style={{ backgroundColor: '#00577d', color: '#ffffff' }}>
-            <style jsx>{`
-        .footer-link {
-          color: rgba(138, 211, 242, 0.8);
-          transition: color 0.2s;
-        }
-        .footer-link:hover {
-          color: #ffffff;
-        }
-        .border-celeste-alpha {
-          border-color: rgba(138, 211, 242, 0.2);
-        }
-      `}</style>
-
             <Container>
                 <div className="py-12 grid md:grid-cols-4 gap-8">
                     <div className="md:col-span-2">
-                        <div className="font-bold text-3xl mb-4">NMO</div>
-                        <p className="footer-link text-sm max-w-md">
+                        <Image
+                            src="/images/logo/nmo.png"
+                            alt="NMO Capacitación Neurolúdica"
+                            width={150}
+                            height={50}
+                            className="h-12 w-auto mb-4 brightness-0 invert"
+                        />
+                        <p
+                            className="text-sm max-w-md"
+                            style={{ color: 'rgba(138, 211, 242, 0.8)' }}
+                        >
                             Capacitación Neurolúdica. Transformando profesionales desde 1995.
                         </p>
                     </div>
@@ -53,7 +50,10 @@ export function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="footer-link text-sm"
+                                        className="text-sm transition-colors duration-200"
+                                        style={{ color: 'rgba(138, 211, 242, 0.8)' }}
+                                        onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
+                                        onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(138, 211, 242, 0.8)'}
                                     >
                                         {link.name}
                                     </Link>
@@ -70,7 +70,11 @@ export function Footer() {
                                     <Link
                                         href={link.href}
                                         target={link.external ? "_blank" : undefined}
-                                        className="footer-link text-sm"
+                                        rel={link.external ? "noopener noreferrer" : undefined}
+                                        className="text-sm transition-colors duration-200"
+                                        style={{ color: 'rgba(138, 211, 242, 0.8)' }}
+                                        onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
+                                        onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(138, 211, 242, 0.8)'}
                                     >
                                         {link.name}
                                     </Link>
@@ -80,7 +84,13 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-celeste-alpha py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm footer-link">
+                <div
+                    className="border-t py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+                    style={{
+                        borderColor: 'rgba(138, 211, 242, 0.2)',
+                        color: 'rgba(138, 211, 242, 0.8)'
+                    }}
+                >
                     <p>© 2025 NMO Capacitación Neurolúdica. Todos los derechos reservados.</p>
                     <p>Desarrollado por <span className="text-white font-semibold">Ascend</span></p>
                 </div>

@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { EXTERNAL_LINKS } from "@/config/links";
@@ -42,8 +43,8 @@ export function Navbar() {
     return (
         <motion.nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-white/95 backdrop-blur-md shadow-md"
-                    : "bg-white/80 backdrop-blur-sm"
+                ? "bg-white/95 backdrop-blur-md shadow-md"
+                : "bg-white/80 backdrop-blur-sm"
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
@@ -51,10 +52,16 @@ export function Navbar() {
         >
             <Container>
                 <div className="flex items-center justify-between h-16">
+                    {/* LOGO */}
                     <Link href="/" className="flex-shrink-0">
-                        <div className="font-bold text-2xl" style={{ color: '#00577d' }}>
-                            NMO
-                        </div>
+                        <Image
+                            src="/images/logo/nmo.png"
+                            alt="NMO Capacitación Neurolúdica"
+                            width={120}
+                            height={40}
+                            className="h-10 w-auto"
+                            priority
+                        />
                     </Link>
 
                     {/* DESKTOP MENU */}
