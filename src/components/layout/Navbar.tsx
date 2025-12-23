@@ -70,10 +70,10 @@ export function Navbar() {
                                     <div
                                         onMouseEnter={() => setOpenDropdown(link.name)}
                                         onMouseLeave={() => setOpenDropdown(null)}
-                                        className="relative"
+                                        className="relative group"
                                     >
                                         <button
-                                            className="font-medium flex items-center gap-1 transition-colors duration-200"
+                                            className="font-medium flex items-center gap-1 transition-colors duration-200 py-2"
                                             style={{ color: '#00577d' }}
                                             onMouseEnter={(e) => e.currentTarget.style.color = '#8ad3f2'}
                                             onMouseLeave={(e) => e.currentTarget.style.color = '#00577d'}
@@ -82,25 +82,32 @@ export function Navbar() {
                                             <ChevronDownIcon className="w-4 h-4" />
                                         </button>
 
+                                        {/* DROPDOWN - SE MANTIENE ABIERTO */}
                                         {openDropdown === link.name && (
                                             <div
-                                                className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg overflow-hidden shadow-lg"
-                                                style={{ border: '1px solid rgba(138, 211, 242, 0.3)' }}
+                                                className="absolute top-full left-0 pt-2 w-56"
+                                                onMouseEnter={() => setOpenDropdown(link.name)}
+                                                onMouseLeave={() => setOpenDropdown(null)}
                                             >
-                                                {link.dropdown.map((item) => (
-                                                    <Link
-                                                        key={item.name}
-                                                        href={item.href}
-                                                        target={item.external ? "_blank" : undefined}
-                                                        rel={item.external ? "noopener noreferrer" : undefined}
-                                                        className="block px-4 py-3 transition-colors duration-200 hover:bg-gray-50"
-                                                        style={{ color: '#00577d' }}
-                                                        onMouseEnter={(e) => e.currentTarget.style.color = '#8ad3f2'}
-                                                        onMouseLeave={(e) => e.currentTarget.style.color = '#00577d'}
-                                                    >
-                                                        {item.name}
-                                                    </Link>
-                                                ))}
+                                                <div
+                                                    className="bg-white rounded-lg overflow-hidden shadow-lg"
+                                                    style={{ border: '1px solid rgba(138, 211, 242, 0.3)' }}
+                                                >
+                                                    {link.dropdown.map((item) => (
+                                                        <Link
+                                                            key={item.name}
+                                                            href={item.href}
+                                                            target={item.external ? "_blank" : undefined}
+                                                            rel={item.external ? "noopener noreferrer" : undefined}
+                                                            className="block px-4 py-3 transition-colors duration-200 hover:bg-gray-50"
+                                                            style={{ color: '#00577d' }}
+                                                            onMouseEnter={(e) => e.currentTarget.style.color = '#8ad3f2'}
+                                                            onMouseLeave={(e) => e.currentTarget.style.color = '#00577d'}
+                                                        >
+                                                            {item.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
                                             </div>
                                         )}
                                     </div>
