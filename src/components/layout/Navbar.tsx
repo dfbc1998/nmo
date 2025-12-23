@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { EXTERNAL_LINKS } from "@/config/links";
 import { Container } from "./Container";
@@ -151,17 +151,76 @@ export function Navbar() {
                 </div>
             </Container>
 
-            {/* MOBILE MENU */}
+            {/* MOBILE MENU - CON ANIMACIÓN SUAVE */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
-                    <div
-                        className="md:hidden bg-white"
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{
+                            opacity: 1,
+                            height: "auto",
+                            transition: {
+                                height: {
+                                    duration: 0.3,
+                                    ease: [0.04, 0.62, 0.23, 0.98]
+                                },
+                                opacity: {
+                                    duration: 0.25,
+                                    ease: "easeInOut"
+                                }
+                            }
+                        }}
+                        exit={{
+                            opacity: 0,
+                            height: 0,
+                            transition: {
+                                height: {
+                                    duration: 0.3,
+                                    ease: [0.04, 0.62, 0.23, 0.98]
+                                },
+                                opacity: {
+                                    duration: 0.2,
+                                    ease: "easeInOut"
+                                }
+                            }
+                        }}
+                        className="md:hidden bg-white overflow-hidden"
                         style={{ borderTop: '1px solid rgba(138, 211, 242, 0.3)' }}
                     >
                         <Container>
-                            <div className="py-4 space-y-3">
-                                {navLinks.map((link) => (
-                                    <div key={`mobile-${link.name}`}>
+                            <motion.div
+                                className="py-4 space-y-3"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        delay: 0.1,
+                                        duration: 0.3,
+                                        ease: "easeOut"
+                                    }
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    transition: {
+                                        duration: 0.2
+                                    }
+                                }}
+                            >
+                                {navLinks.map((link, index) => (
+                                    <motion.div
+                                        key={`mobile-${link.name}`}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{
+                                            opacity: 1,
+                                            x: 0,
+                                            transition: {
+                                                delay: 0.1 + (index * 0.05),
+                                                duration: 0.3,
+                                                ease: "easeOut"
+                                            }
+                                        }}
+                                    >
                                         {link.dropdown ? (
                                             <>
                                                 <div
@@ -198,19 +257,31 @@ export function Navbar() {
                                                 {link.name}
                                             </Link>
                                         )}
-                                    </div>
+                                    </motion.div>
                                 ))}
 
-                                <Button
-                                    href="#contacto"
-                                    className="w-full"
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{
+                                        opacity: 1,
+                                        y: 0,
+                                        transition: {
+                                            delay: 0.4,
+                                            duration: 0.3
+                                        }
+                                    }}
                                 >
-                                    Solicitar Información
-                                </Button>
-                            </div>
+                                    <Button
+                                        href="#contacto"
+                                        className="w-full"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        Solicitar Información
+                                    </Button>
+                                </motion.div>
+                            </motion.div>
                         </Container>
-                    </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </nav>

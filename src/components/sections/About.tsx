@@ -16,13 +16,6 @@ const credentials = [
     "Autor: 'Contabilidad del Ser' (Editorial Almaluz, 2023)",
 ];
 
-const timeline = [
-    { year: "1995", event: "Fundación de NMO" },
-    { year: "2000", event: "South Consulting Group" },
-    { year: "2023", event: "Publicación 'Contabilidad del Ser'" },
-    { year: "2024", event: "Expansión a Paraguay y Chile" },
-];
-
 export function About() {
     return (
         <Section id="sobre-nosotros" className="bg-gray-50 overflow-hidden">
@@ -44,57 +37,52 @@ export function About() {
                     </p>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
-                    {/* FOTO DE DANIEL - INTEGRADA SIN BORDES VISIBLES */}
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* FOTO DE DANIEL - MÁS GRANDE */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="relative max-w-md mx-auto">
-                            {/* FONDO CON GRADIENTE RADIAL - MUY DIFUMINADO */}
+                        {/* CONTENEDOR MÁS GRANDE */}
+                        <div className="relative max-w-xl mx-auto px-8 py-8">
+
+                            {/* AURA/GRADIENTE RADIAL - SIN LÍMITES, EXTENDIDO */}
                             <div
-                                className="absolute inset-0 opacity-40"
+                                className="absolute -inset-20 opacity-40 -z-10"
                                 style={{
-                                    background: 'radial-gradient(circle at 30% 30%, rgba(138, 211, 242, 0.4) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(0, 87, 125, 0.3) 0%, transparent 50%)',
+                                    background: 'radial-gradient(circle at 40% 40%, rgba(138, 211, 242, 0.5) 0%, rgba(138, 211, 242, 0.2) 30%, transparent 60%), radial-gradient(circle at 60% 60%, rgba(0, 87, 125, 0.4) 0%, rgba(0, 87, 125, 0.2) 30%, transparent 60%)',
                                 }}
                             />
 
-                            {/* CÍRCULOS DECORATIVOS MUY DIFUMINADOS - MÁS GRANDES Y LEJANOS */}
+                            {/* CÍRCULOS DECORATIVOS GRANDES */}
                             <div
-                                className="absolute -top-24 -left-24 w-96 h-96 rounded-full blur-3xl opacity-20 -z-10"
+                                className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-3xl opacity-15 -z-20"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full blur-3xl opacity-15 -z-10"
+                                className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full blur-3xl opacity-10 -z-20"
                                 style={{ backgroundColor: '#00577d' }}
                             />
 
-                            {/* IMAGEN DE DANIEL CON DEGRADADO SUTIL EN LOS BORDES */}
+                            {/* CONTENEDOR DE LA IMAGEN - MÁS GRANDE */}
                             <div className="relative z-10">
-                                {/* Overlay de gradiente para suavizar bordes */}
-                                <div
-                                    className="absolute inset-0 pointer-events-none z-20"
-                                    style={{
-                                        background: 'linear-gradient(to bottom, rgba(249, 250, 251, 0) 10%, rgba(249, 250, 251, 0) 90%, rgba(249, 250, 251, 0.3) 100%), linear-gradient(to right, rgba(249, 250, 251, 0.2) 0%, rgba(249, 250, 251, 0) 10%, rgba(249, 250, 251, 0) 90%, rgba(249, 250, 251, 0.2) 100%)',
-                                    }}
-                                />
-
                                 {/* Sombra suave y difusa detrás */}
                                 <div
-                                    className="absolute inset-8 rounded-full opacity-10 blur-3xl -z-10"
+                                    className="absolute inset-8 rounded-full opacity-8 blur-3xl -z-10"
                                     style={{ backgroundColor: '#00577d' }}
                                 />
 
+                                {/* IMAGEN DE DANIEL - TAMAÑO AUMENTADO */}
                                 <Image
                                     src="/images/about/daniel2.png"
                                     alt="Daniel Deu - Fundador NMO"
-                                    width={500}
-                                    height={600}
+                                    width={700}
+                                    height={840}
                                     className="w-full h-auto relative z-10"
                                     style={{
-                                        filter: 'drop-shadow(0 20px 40px rgba(0, 87, 125, 0.1))',
+                                        filter: 'drop-shadow(0 20px 40px rgba(0, 87, 125, 0.12))',
                                     }}
                                     priority
                                 />
@@ -106,53 +94,53 @@ export function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
-                                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl z-20 max-w-xs"
+                                className="absolute -bottom-4 -right-4 bg-white rounded-2xl p-5 shadow-2xl z-20"
                                 style={{
                                     boxShadow: '0 20px 60px rgba(0, 87, 125, 0.15)'
                                 }}
                             >
                                 <div className="flex items-center gap-3">
                                     <div
-                                        className="w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
+                                        className="w-14 h-14 rounded-full flex items-center justify-center text-3xl flex-shrink-0"
                                         style={{ backgroundColor: 'rgba(138, 211, 242, 0.2)' }}
                                     >
                                         📚
                                     </div>
                                     <div>
                                         <div
-                                            className="font-semibold text-sm"
+                                            className="font-semibold text-base"
                                             style={{ color: '#00577d' }}
                                         >
                                             Autor & Educador
                                         </div>
-                                        <div className="text-xs text-gray-600">
+                                        <div className="text-sm text-gray-600">
                                             30+ años de experiencia
                                         </div>
                                     </div>
                                 </div>
                             </motion.div>
 
-                            {/* ELEMENTOS DECORATIVOS SUTILES */}
+                            {/* ELEMENTOS DECORATIVOS MUY SUTILES */}
                             <div
-                                className="absolute top-20 -left-4 w-32 h-32 rounded-full opacity-5 -z-10"
+                                className="absolute top-24 -left-8 w-40 h-40 rounded-full opacity-5 -z-10"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute bottom-32 -right-8 w-40 h-40 rounded-full opacity-5 -z-10"
+                                className="absolute bottom-32 -right-12 w-48 h-48 rounded-full opacity-5 -z-10"
                                 style={{ backgroundColor: '#00577d' }}
                             />
 
                             {/* Puntos decorativos muy sutiles */}
                             <div
-                                className="absolute top-16 left-12 w-2 h-2 rounded-full opacity-20"
-                                style={{ backgroundColor: '#8ad3f2' }}
-                            />
-                            <div
                                 className="absolute top-20 left-16 w-2 h-2 rounded-full opacity-20"
                                 style={{ backgroundColor: '#8ad3f2' }}
                             />
                             <div
-                                className="absolute bottom-28 right-16 w-3 h-3 rounded-full opacity-15"
+                                className="absolute top-24 left-20 w-2 h-2 rounded-full opacity-20"
+                                style={{ backgroundColor: '#8ad3f2' }}
+                            />
+                            <div
+                                className="absolute bottom-32 right-20 w-3 h-3 rounded-full opacity-15"
                                 style={{ backgroundColor: '#00577d' }}
                             />
                         </div>
@@ -203,37 +191,6 @@ export function About() {
                         </div>
                     </motion.div>
                 </div>
-
-                {/* TRAYECTORIA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <h3 className="text-2xl font-bold text-center mb-12 text-gray-900">
-                        Nuestra Trayectoria
-                    </h3>
-                    <div className="grid md:grid-cols-4 gap-8">
-                        {timeline.map((item, index) => (
-                            <motion.div
-                                key={item.year}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="text-center"
-                            >
-                                <div
-                                    className="inline-block text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mb-4"
-                                    style={{ backgroundColor: '#00577d' }}
-                                >
-                                    {item.year}
-                                </div>
-                                <p className="text-gray-700 font-medium">{item.event}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
             </div>
         </Section>
     );
