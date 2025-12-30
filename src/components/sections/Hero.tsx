@@ -220,7 +220,7 @@ export function Hero() {
                                         Capacitación Neurolúdica
                                     </div>
                                     <div className="text-xs text-gray-600">
-                                        Desde 1995 transformando profesionales
+                                        Desde 1995 potenciando talentos
                                     </div>
                                 </div>
                             </div>
