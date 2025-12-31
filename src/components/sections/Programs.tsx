@@ -10,7 +10,7 @@ const programs = [
         title: "Área Educativa",
         description: "Especialización en Capacitación Neurolúdica para docentes y estudiantes de Ciencias de la Educación. Desarrollo de competencias pedagógicas innovadoras.",
         icon: "🎓",
-        duration: "8 meses",
+        duration: "1 meses",
         features: [
             "Metodología N.M.O aplicada a la educación",
             "Herramientas neurolúdicas para el aula",
@@ -21,18 +21,18 @@ const programs = [
         title: "Área Empresarial",
         description: "Programa de desarrollo ejecutivo que integra neurociencias y gestión del talento humano para líderes y equipos de alto rendimiento.",
         icon: "💼",
-        duration: "6 meses",
+        duration: "1 meses",
         features: [
-            "Liderazgo neurocognitivo",
-            "Toma de decisiones estratégicas",
-            "Gestión de equipos de alto rendimiento",
+            "Autoliderazgo y Resolución creativa de conflictos",
+            "Toma de decisiones con base en las neurociencias",
+            "Gestión de equipos creativos de alto rendimiento",
         ],
     },
     {
         title: "Área Pública",
         description: "Formación especializada para funcionarios públicos en gestión, liderazgo y transformación organizacional basada en neurociencias.",
         icon: "🏛️",
-        duration: "6 meses",
+        duration: "1 meses",
         features: [
             "Gestión pública efectiva",
             "Innovación en servicios públicos",
@@ -45,9 +45,9 @@ const programs = [
         icon: "🌟",
         duration: "Flexible",
         features: [
+            "Del trabajo a la empleabilidad",
             "Autogestión y desarrollo personal",
-            "Creatividad e innovación",
-            "Modalidad presencial y virtual",
+            "Aprender a emprender",
         ],
     },
 ];

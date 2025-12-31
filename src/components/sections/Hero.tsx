@@ -75,7 +75,7 @@ export function Hero() {
                             className="text-lg md:text-xl text-gray-700 leading-relaxed"
                         >
                             Capacitación Neurolúdica NMO. Desarrollamos competencias mediante
-                            aprendizaje vivencial basado en neurociencias aplicadas.
+                            un aprendizaje vivencial basado en neurociencias aplicadas.
                         </motion.p>
                     </div>
 
