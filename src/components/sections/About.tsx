@@ -11,9 +11,10 @@ const credentials = [
     "5 Maestrías en Reiki",
     "Diplomado en Juego",
     "Especialista en Logoterapia",
-    "30+ años profesor universitario (UBA, UNLu, U. Morón)",
-    "Ex-Director Senado de la Nación Argentina",
-    "Autor: 'Contabilidad del Ser' (Editorial Almaluz, 2023)",
+    "30+ años profesor universitario (UBA, UNLu, U. Morón, U. Belgrano, UNLaM)",
+    "Ex-Director de Capacitación y Formación Profesional Senado de la Nación Argentina",
+    "Autor: 'Contabilidad del Ser', 'El Contador Futuriso' Y 'Neuroludica NMO (En Prensa)'",
+    "Neurocontabilidad",
 ];
 
 export function About() {
