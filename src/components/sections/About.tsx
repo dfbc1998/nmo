@@ -12,8 +12,10 @@ const credentials = [
     "Diplomado en Juego",
     "Especialista en Logoterapia",
     "30+ años profesor universitario (UBA, UNLu, U. Morón, U. Belgrano, UNLaM)",
+    "Director del Proyecto de Invetigación en Neurocontabilidad UNLu",
     "Ex-Director de Capacitación y Formación Profesional Senado de la Nación Argentina",
     "Autor: 'Contabilidad del Ser', 'El Contador Futurizo' y 'Neuroludica NMO (En Prensa)'",
+
 ];
 
 export function About() {
