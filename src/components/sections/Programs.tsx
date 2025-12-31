@@ -24,8 +24,10 @@ const programs = [
         duration: "1 meses",
         features: [
             "Autoliderazgo y Resolución creativa de conflictos",
-            "Toma de decisiones con base en las neurociencias",
-            "Gestión de equipos creativos de alto rendimiento",
+            "Habilidades de negociación empática",
+            "Toma de decisiones: las funciones ejecutivas",
+            "Smart Thinking: neurociencias de las emociones",
+            "Gestión del Cambio organizacional",
         ],
     },
     {
