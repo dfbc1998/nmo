@@ -36,9 +36,9 @@ const programs = [
         icon: "🏛️",
         duration: "1 meses",
         features: [
-            "Gestión pública efectiva",
-            "Innovación en servicios públicos",
+            "Gamificación para la Gestión Pública",
             "Liderazgo transformacional",
+            "Empleabilidad pública",
         ],
     },
     {

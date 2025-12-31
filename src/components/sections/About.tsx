@@ -13,8 +13,7 @@ const credentials = [
     "Especialista en Logoterapia",
     "30+ años profesor universitario (UBA, UNLu, U. Morón, U. Belgrano, UNLaM)",
     "Ex-Director de Capacitación y Formación Profesional Senado de la Nación Argentina",
-    "Autor: 'Contabilidad del Ser', 'El Contador Futuriso' Y 'Neuroludica NMO (En Prensa)'",
-    "Neurocontabilidad",
+    "Autor: 'Contabilidad del Ser', 'El Contador Futurizo' y 'Neuroludica NMO (En Prensa)'",
 ];
 
 export function About() {
