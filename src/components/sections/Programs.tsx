@@ -12,8 +12,8 @@ const programs = [
         icon: "🎓",
         duration: "1 meses",
         features: [
-            "Metodología N.M.O aplicada a la educación",
-            "Herramientas neurolúdicas para el aula",
+            "Estrategias didácticas innovadoras: Neurolúdica",
+            "Soft Skills: hacia la Neurocontabilidad",
             "Certificación oficial",
         ],
     },
