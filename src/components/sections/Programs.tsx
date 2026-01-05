@@ -15,6 +15,8 @@ const programs = [
             "Estrategias didácticas innovadoras: Neurolúdica",
             "Neurocontabilidad: un cambio de paradigma",
             "Técnicas creativas para aplicar en el aula",
+            "El papel del juego en la exploración neuropsicológica infantil",
+            "Implicancias educativas del juego creativo atreves de la neuropsicología"
         ],
     },
     {
