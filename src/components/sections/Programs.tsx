@@ -13,8 +13,8 @@ const programs = [
         duration: "1 meses",
         features: [
             "Estrategias didácticas innovadoras: Neurolúdica",
-            "Soft Skills: hacia la Neurocontabilidad",
-            "Certificación oficial",
+            "Neurocontabilidad: un cambio de paradigma",
+            "Técnicas creativas para aplicar en el aula",
         ],
     },
     {
