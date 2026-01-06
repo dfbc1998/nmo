@@ -8,7 +8,7 @@ import { EXTERNAL_LINKS } from "@/config/links";
 const programs = [
     {
         title: "Área Educativa",
-        description: "Expertos en Capacitación Neurolúdica para docentes y estudiantes de Ciencias de la Educación. Desarrollo de competencias pedagógicas innovadoras.",
+        description: "Especialistas en Capacitación Neurolúdica para docentes y estudiantes de Ciencias de la Educación. Desarrollo de competencias pedagógicas innovadoras.",
         icon: "🎓",
         duration: "1 mes",
         features: [
@@ -34,7 +34,7 @@ const programs = [
     },
     {
         title: "Área Pública",
-        description: "Formación de funcionarios públicos expertos en gestión, liderazgo y transformación organizacional basada en neurociencias.",
+        description: "Especialistas en formación de funcionarios públicos en gestión, liderazgo y transformación organizacional basada en neurociencias.",
         icon: "🏛️",
         duration: "1 mes",
         features: [
