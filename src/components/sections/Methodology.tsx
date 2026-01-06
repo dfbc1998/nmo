@@ -38,12 +38,12 @@ const pillars = [
 ];
 
 const benefits = [
-    "Impulsa el éxito entre profesionales",
-    "Ayuda a resistir distracciones",
-    "Refuerza la agilidad mental",
-    "Genera ideas y soluciones originales",
-    "Mejora el autocontrol y modulación de emociones",
-    "Potencia la dinámica del cerebro",
+    "Acompaña el crecimiento profesional desde una mirada consciente",
+    "Entrena la atención en un mundo saturado de estímulos.",
+    "Desarrolla una mente ágil, flexible y creativa",
+    "Estimula la generación de ideas y soluciones originales.",
+    "Mejora el autocontrol y la modulación de las emociones.",
+    "Potencia la dinámica neurocognitiva de manera integral.",
 ];
 
 export function Methodology() {

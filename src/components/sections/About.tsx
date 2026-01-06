@@ -8,7 +8,7 @@ import Image from "next/image";
 const credentials = [
     "Contador Público (UBA)",
     "MBA - Maestría en Administración de Negocios (UM)",
-    "5 Maestrías en Reiki",
+    "Maestrías en Reiki (Gendai Reiki Ho)",
     "Diplomado en Juego, Institute for Research and Education in Play",
     "Diplomado en Logoterapia (México)",
     "30+ años profesor universitario (UBA, UNLu, U. Morón, U. Belgrano)",
@@ -170,14 +170,11 @@ export function About() {
                         </div>
 
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            Con más de 30 años de experiencia en docencia universitaria y capacitación
-                            empresarial, Daniel Deu ha desarrollado una metodología única que combina
-                            neurociencias, contabilidad y aprendizaje vivencial.
+                            Con más de treinta años de trayectoria en docencia universitaria y capacitación empresarial, Daniel Deu ha desarrollado una metodología singular que articula neurociencias, lúdica, creatividad y aprendizaje vivencial, integrando rigor académico y experiencia transformadora.
                         </p>
 
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            Fundador de NMO en 1995, ha transformado la vida profesional de cientos
-                            de contadores, empresarios y educadores en Argentina, Paraguay y Chile.
+                            Fundador de N.M.O. en 1995, su trabajo ha impactado de manera significativa en la vida profesional de cientos de profesionales, empresarios y educadores, acompañándonos en procesos de desarrollo, innovación y toma de decisiones conscientes.
                         </p>
 
                         <div className="bg-white rounded-xl p-6 shadow-sm">
