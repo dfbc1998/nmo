@@ -8,27 +8,27 @@ const pillars = [
     {
         icon: "🎯",
         title: "Mejorar Competencias",
-        description: "Orientadas a neurociencias conductuales: habilidades, destrezas, conocimientos y valores",
+        description: "Potenciarlas desde las neurociencias conductuales, articulando habilidades, destrezas, conocimientos y valores en la práctica.",
     },
     {
         icon: "🧠",
         title: "Autogestión",
-        description: "Generar nuevas alternativas de gestión del conocimiento",
+        description: "Explorar y desarrollar nuevas formas de gestionar el conocimiento.",
     },
     {
         icon: "💡",
         title: "Potenciar Dimensiones",
-        description: "Cognitivas y afectivo-motivacionales para acrecentar rasgos personales",
+        description: "Cognitivas y afecto-motivacionales como base del desarrollo personal.",
     },
     {
         icon: "⚡",
         title: "Toma de Decisiones",
-        description: "Perfeccionar procesos para desarrollar múltiples talentos personales",
+        description: "Optimizar los procesos para empoderar los talentos personales.",
     },
     {
         icon: "🌟",
         title: "Calidad de Vida",
-        description: "Enaltecer mediante creatividad, innovación, desarrollo y ética",
+        description: "Promoverla integrando creatividad, innovación, desarrollo y ética",
     },
     {
         icon: "🚀",
