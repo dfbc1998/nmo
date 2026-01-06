@@ -28,12 +28,12 @@ const pillars = [
     {
         icon: "🌟",
         title: "Calidad de Vida",
-        description: "Promoverla integrando creatividad, innovación, desarrollo y ética",
+        description: "Promoverla integrando creatividad, innovación, desarrollo y ética.",
     },
     {
         icon: "🚀",
         title: "Inteligencia Ejecutiva",
-        description: "Potenciar funciones ejecutivas para conducta dirigida a objetivos",
+        description: "Potenciar funciones ejecutivas para conducta dirigida a objetivos.",
     },
 ];
 
