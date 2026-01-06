@@ -9,14 +9,15 @@ const credentials = [
     "Contador Público (UBA)",
     "MBA - Maestría en Administración de Negocios (UM)",
     "Maestrías en Reiki (Gendai Reiki Ho)",
-    "Diplomado en Juego, Institute for Research and Education in Play",
+    "Diplomado en Juego (Institute for Research and Education in Play)",
     "Diplomado en Logoterapia (México)",
-    "30+ años profesor universitario (UBA, UNLu, U. Morón, U. Belgrano)",
-    "Director del Proyecto de Invetigación en Neurocontabilidad UNLu",
-    "Ex-Director de Capacitación y Formación Profesional Senado de la Nación Argentina",
-    "Autor: 'Contabilidad del Ser', 'El Contador Futurizo' y 'Neuroludica NMO (En Prensa)'",
+    "30+ años profesor universitario (UBA, UNLu, U. Morón, U. Belgrano, U. de la Matanza)",
+        "Especialista en Docencia Universitaria para Ciencias Económicas (UBA)",
+    "Director del Proyecto de Invetigación en Neurocontabilidad (UNLu)",
+    "Ex-Director de Capacitación y Formación Profesional (H.S.N)",
+    "Investigador, Disertante, Autor de Libros de Contabilidad, Economía, Administración, Lúdica, Creatividad y Desarrollo Personal",
     "Consultor Especializado en Desarrollo de Estrategias de Negocios Nacionales e Internacionales",
-    "Especialista en Docencia Universitaria para Ciencias Económicas (UBA)",
+
 
 ];
 
